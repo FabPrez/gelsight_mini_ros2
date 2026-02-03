@@ -65,7 +65,7 @@ GSROBOTICS_PATH = "/home/yourusername/projects/tactile_ws/src/gelsight_mini_ros2
 ## How to Use It
 Launch the GelSight Mini ROS2 node with your desired device ID:
 ```bash
-ros2 launch gsmini_ros2 gsmini.launch.py device_id:=0
+ros2 launch gsmini_ros2 gsmini_venv.launch.py device_id:=0
 ```
 
 ## Configuration and general warnings 
@@ -84,4 +84,5 @@ v4l2-ctl -d /dev/video2 --set-fmt-video=width=640,height=480
 
 For a cleaner USB camera interface that works more reliably for resolution changes, check out my other repository: [sensing_utils_ros2](https://github.com/FabPrez/ros2_sensing_utils.git)
 Provides better control over USB camera parameters and can integrate input with v4l2 (cpp code is coming)
+
 
