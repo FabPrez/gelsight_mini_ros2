@@ -53,4 +53,11 @@ source install/setup.bash
 6. create a virtual environment and install all the requiriments for the [GelSight Robotics SDK](https://github.com/gelsightinc/gsrobotics.git)
 7. use the path of the virtual environemnt as an hard coded path for the launch file "simple_pub_hardcoded.launch.py"
 
+## Path Configuration
+To avoid touching the gsrobotics package, paths to reference that folder have been made relative where possible. However, relative paths don't always work reliably, so you can directly set the gsrobotics path in the file gsmini_img_pub.py.
 
+Simply edit the path variable in that file to point to your local gsrobotics folder:
+```bash
+# Example - adjust to your workspace structure
+GSROBOTICS_PATH = "/home/yourusername/projects/tactile_ws/src/gelsight_mini_ros2/gsrobotics"
+```
