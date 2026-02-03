@@ -51,7 +51,7 @@ source install/setup.bash
 ```
 
 6. create a virtual environment and install all the requiriments for the [GelSight Robotics SDK](https://github.com/gelsightinc/gsrobotics.git)
-7. use the path of the virtual environemnt as an hard coded path for the launch file "simple_pub_hardcoded.launch.py"
+7. use the path of the virtual environemnt as an hard coded path for the launch file "gsmini_venv.launch.py"
 
 ## Path Configuration
 To avoid touching the gsrobotics package, paths to reference that folder have been made relative where possible. However, relative paths don't always work reliably, so you can directly set the gsrobotics path in the file gsmini_img_pub.py.
@@ -84,3 +84,4 @@ v4l2-ctl -d /dev/video2 --set-fmt-video=width=640,height=480
 
 For a cleaner USB camera interface that works more reliably for resolution changes, check out my other repository: [sensing_utils_ros2](https://github.com/FabPrez/ros2_sensing_utils.git)
 Provides better control over USB camera parameters and can integrate input with v4l2 (cpp code is coming)
+
