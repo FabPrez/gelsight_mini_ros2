@@ -10,7 +10,7 @@ from types import ModuleType
 # ---------------- minimal manual path shim ----------------
 
 # --- set your absolute path here (point to the folder that contains "gsrobotics" or to "gsrobotics" itself) ---
-GSROBOTICS_PATH = "/home/fabioprez/projects/fruit_ws/src/gsmini"  # <<-- replace with your absolute path
+GSROBOTICS_PATH = "/home/fabioprez/projects/fruit_ws/src/gelsight_mini_ros2"  # <<-- replace with your absolute path
 
 def _add_root(root_path: str):
     root_path = os.path.abspath(os.path.expanduser(root_path))
