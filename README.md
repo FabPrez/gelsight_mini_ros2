@@ -61,3 +61,26 @@ Simply edit the path variable in that file to point to your local gsrobotics fol
 # Example - adjust to your workspace structure
 GSROBOTICS_PATH = "/home/yourusername/projects/tactile_ws/src/gelsight_mini_ros2/gsrobotics"
 ```
+
+## How to Use It
+Launch the GelSight Mini ROS2 node with your desired device ID:
+```bash
+ros2 launch gsmini_ros2 gsmini.launch.py device_id:=0
+```
+
+## Configuration and general warnings 
+This wrapper uses the config files directly from the gsrobotics package. To modify settings like resolution, camera parameters, or processing options:
+Edit the config files in gsrobotics/config/ (e.g., default_config.json). Common parameters include camera_width, camera_height, border_fraction, etc.
+
+Most resolution changes are done via software cropping in the gsrobotics package since it uses OpenCV's VideoCapture.
+For hardware-level resolution changes at the camera driver level, use v4l2 tools:
+```bash
+# List devices
+v4l2-ctl --list-devices
+
+# Set resolution (example for device /dev/video2)
+v4l2-ctl -d /dev/video2 --set-fmt-video=width=640,height=480
+```
+
+For a cleaner USB camera interface that works more reliably for resolution changes, check out my other repository: [sensing_utils_ros2](https://github.com/FabPrez/ros2_sensing_utils.git)
+Provides better control over USB camera parameters and can integrate input with v4l2 (cpp code is coming)
