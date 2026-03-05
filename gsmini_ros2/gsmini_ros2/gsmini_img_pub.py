@@ -100,10 +100,10 @@ class GelSightPublisher(Node):
 
         target_w = getattr(self.gs_config, "camera_width", 640) if self.gs_config else 640
         target_h = getattr(self.gs_config, "camera_height", 480) if self.gs_config else 480
-        border_fraction = getattr(self.gs_config, "border_fraction", 0.1) if self.gs_config else 0.1
+        # border_fraction = getattr(self.gs_config, "border_fraction", 0.1) if self.gs_config else 0.1
 
         # instantiate camera object
-        self.cam = GelSightMini(target_width=target_w, target_height=target_h, border_fraction=border_fraction)
+        self.cam = GelSightMini(target_width=target_w, target_height=target_h, border_fraction=0.0)
 
         # select device BEFORE start
         if self.device_id is not None and hasattr(self.cam, "select_device"):
